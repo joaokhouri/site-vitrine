@@ -9,11 +9,11 @@
 }
 
 :root {
-  --background: #f9fafb; //Fundo da página
-  --primary: #3b82f6; // Botões principais, destaques
-  --secondary: #8b5cf6; //Acentos, ícones, preços
-  --text: #1f2937; //Texto principal, rodapé
-  --destaque: #10b981; //Ofertas, etiquetas de “Novo” etc.
+  --background: #f9fafb;
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+  --text: #1f2937;
+  --destaque: #10b981;
 }
 
 body {
