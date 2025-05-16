@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "nome": "Fone Bluetooth Esportivo",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_720778-MLU72692359344_112023-F.webp",
+    "preco": 89.9,
+    "link": "https://www.mercadolivre.com.br/fone-bluetooth-esportivo/p/MLB123456"
+  },
+  {
+    "id": "2",
+    "nome": "Suporte Veicular Magnético",
+    "imagem": "https://cf.shopee.com.br/file/2410e80b3a1220b8c81e0c3ebdb34685",
+    "preco": 29.9,
+    "link": "https://shopee.com.br/suporte-magnetico/p/SH123456"
+  },
+  {
+    "id": "3",
+    "nome": "Luminária de Mesa LED Touch",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_812462-MLU72059461481_102023-F.webp",
+    "preco": 59.5,
+    "link": "https://www.mercadolivre.com.br/luminaria-led-touch/p/MLB234567"
+  },
+  {
+    "id": "4",
+    "nome": "Relógio Masculino Digital Esportivo",
+    "imagem": "https://cf.shopee.com.br/file/26eaef1a90e0b6ccad7bb5f6b7094fa6",
+    "preco": 109.0,
+    "link": "https://shopee.com.br/relogio-digital/p/SH234567"
+  },
+  {
+    "id": "5",
+    "nome": "Carregador Rápido USB-C 20W",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_973687-MLB71283717462_082023-F.webp",
+    "preco": 39.0,
+    "link": "https://www.mercadolivre.com.br/carregador-usb-c/p/MLB345678"
+  },
+  {
+    "id": "6",
+    "nome": "Garrafa Térmica Inox 500ml",
+    "imagem": "https://cf.shopee.com.br/file/6e0f5ddc2b6be442df9b456d1f4f7060",
+    "preco": 45.9,
+    "link": "https://shopee.com.br/garrafa-inox/p/SH345678"
+  },
+  {
+    "id": "7",
+    "nome": "Mini Teclado Bluetooth Portátil",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_911659-MLU72958323131_112023-F.webp",
+    "preco": 74.9,
+    "link": "https://www.mercadolivre.com.br/mini-teclado-bluetooth/p/MLB456789"
+  },
+  {
+    "id": "8",
+    "nome": "Caixa de Som Portátil Bluetooth",
+    "imagem": "https://cf.shopee.com.br/file/759a0c6c7fcbe4d273c477f69aa1b72c",
+    "preco": 99.0,
+    "link": "https://shopee.com.br/caixa-de-som/p/SH456789"
+  },
+  {
+    "id": "9",
+    "nome": "Kit Organizadores de Cabos",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_819103-MLU70701026419_072023-F.webp",
+    "preco": 22.5,
+    "link": "https://www.mercadolivre.com.br/organizadores-cabos/p/MLB567890"
+  },
+  {
+    "id": "10",
+    "nome": "Suporte Dobrável para Celular",
+    "imagem": "https://cf.shopee.com.br/file/6a5c173340e11b462c54a0b376d1e4e6",
+    "preco": 19.9,
+    "link": "https://shopee.com.br/suporte-celular/p/SH567890"
+  }
+]
