@@ -1,7 +1,7 @@
 import produtosData from '../../produtos.json';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { slugify } from '@/app/utils/slugify';
+import { slugify } from '../../utils/slugify';
 
 export default async function ProdutoPage({ params }) {
   const resolvedParams = await params;
