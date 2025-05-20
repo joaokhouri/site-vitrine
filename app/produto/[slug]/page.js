@@ -4,7 +4,9 @@ import { notFound } from 'next/navigation';
 import { slugify } from '@/app/utils/slugify';
 
 export default async function ProdutoPage({ params }) {
-  const produto = produtosData.find((p) => slugify(p.nome) === params.slug);
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  const produto = produtosData.find((p) => slugify(p.nome) === slug);
 
   if (!produto) return notFound();
 

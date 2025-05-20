@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body className={`${inter.className} antialiased`}>
         <Header port={result} />
-        {children}
+        <main className={result === 'desktop' ? 'pt-20' : null}>{children}</main>
       </body>
     </html>
   );

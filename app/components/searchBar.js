@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import produtosData from '../produtos.json';
 import Link from 'next/link';
-import { slugify } from '@/app/utils/slugify';
+import { slugify } from '../utils/slugify';
 import { Search } from 'lucide-react';
 
 export default function SearchBarResponsive(props) {
@@ -13,6 +13,8 @@ export default function SearchBarResponsive(props) {
   const [showResults, setShowResults] = useState(false);
   const [showSearchBarMobile, setShowSearchBarMobile] = useState(false);
   const containerRef = useRef(null);
+
+  const categorias = [...new Set(produtos.map((p) => p.categoria))];
 
   useEffect(() => {
     setProdutos(produtosData);
@@ -41,14 +43,10 @@ export default function SearchBarResponsive(props) {
   }, [busca, produtos]);
 
   return (
-    <div className={`relative w-full max-w-xl mx-auto px-4 pt-2 ${props.port}`}>
-      {/* Mobile: botão de lupa */}
-      <div className="flex md:hidden justify-end">
+    <div className={`relative w-full max-w-xl mx-auto ${props.port}`}>
+      <div className={`flex ${props.port === 'desktop' ? 'hidden' : null} justify-end`}>
         {!showSearchBarMobile && (
-          <button
-            onClick={() => setShowSearchBarMobile(true)}
-            className="p-2 rounded-full bg-gray-200"
-          >
+          <button onClick={() => setShowSearchBarMobile(true)} className="p-2 rounded-full ">
             <Search className="w-5 h-5 text-gray-700" />
           </button>
         )}
@@ -63,11 +61,17 @@ export default function SearchBarResponsive(props) {
             onChange={(e) => setBusca(e.target.value)}
             onFocus={() => setShowResults(true)}
             placeholder="Buscar produtos..."
-            className="w-full px-4 py-2 border bg-white border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full px-4 ${
+              props.port === 'desktop' ? 'py-2' : 'py-1'
+            } border bg-white border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />
 
           {showResults && (
-            <div className="absolute z-30 top-full left-0 right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto">
+            <div
+              className={`absolute z-51 top-full left-0 right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto ${
+                props.port === 'mobile' ? 'w-full' : null
+              }`}
+            >
               {filtrados.length > 0 ? (
                 filtrados.map((item) => (
                   <Link

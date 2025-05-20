@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from '../assets/logo.png';
 import Image from 'next/image';
+import FadeUp from './animations/fadeUp';
 import MobileMenu from './mobileMenu';
-import SearchMobile from './searchMobile';
 import SearchBarC from './searchBar';
 import useResponsive from '../hooks/getResponsive';
+import CategoriesBar from './categoriesBar';
 
 export default function Header(props) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,19 +43,7 @@ export default function Header(props) {
           : `sticky z-50 `)
       }
     >
-      {props.port === 'mobile' ? (
-        <nav className="flex items-center justify-between px-6 py-2">
-          <div className="logo-navigation-container leading-none text-xl">
-            <Link href="/" className="text-xl leading-none">
-              <Image src={Logo} alt="logo" className="w-24 md:w-32 lg:w-40 h-auto" />
-            </Link>
-          </div>
-          <div className="mobile-menu flex ml-auto">
-            <SearchBarC port={result} />
-            <MobileMenu />
-          </div>{' '}
-        </nav>
-      ) : (
+      {props.port === 'desktop' ? (
         <nav className="flex items-center justify-between px-[9vw] py-3">
           <div className="logo-navigation-container leading-none text-xl flex justify-between">
             <Link href="/" className="text-xl leading-none">
@@ -63,22 +52,28 @@ export default function Header(props) {
           </div>
 
           <SearchBarC port={result} />
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/" className="text-gray-800 hover:text-gray-600">
-              Home
+        </nav>
+      ) : (
+        <nav className="flex items-center justify-between px-6 py-3">
+          <div className="logo-navigation-container leading-none text-xl">
+            <Link href="/" className="text-xl leading-none">
+              <Image src={Logo} alt="logo" className="w-24 md:w-32 lg:w-40 h-auto" />
             </Link>
-            <Link href="/about" className="text-gray-800 hover:text-gray-600">
-              Sobre
-            </Link>
-            <Link href="/services" className="text-gray-800 hover:text-gray-600">
-              Serviços
-            </Link>
-            <Link href="/contact" className="text-gray-800 hover:text-gray-600">
-              Contato
-            </Link>
+          </div>
+          <div className="mobile-menu flex ml-auto gap-4 align-middle items-center">
+            <SearchBarC port={result} />
+            <MobileMenu />
           </div>
         </nav>
       )}
+      <FadeUp
+        isScrolled={isScrolled}
+        className={`absolute w-full bg-white/20 shadow-lg backdrop-blur-[6.2px]`}
+      >
+        <div className="flex justify-center">
+          <CategoriesBar port={result} />
+        </div>
+      </FadeUp>
     </header>
   );
 }
