@@ -2,9 +2,12 @@
 import Header from './components/header';
 import useResponsive from './hooks/getResponsive';
 import './globals.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import './components/styles/swiper-custom.css';
 
 import { Inter } from 'next/font/google';
-import './globals.css';
 
 const inter = Inter({
   subsets: ['latin'],

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "nome": "Fone Bluetooth Esportivo",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_720778-MLU72692359344_112023-F.webp",
+    "preco": 89.9,
+    "link": "https://www.mercadolivre.com.br/fone-bluetooth-esportivo/p/MLB123456",
+    "descricao": "Fone de ouvido sem fio, ideal para atividades físicas. Com resistência à água e som de alta qualidade.",
+    "categoria": "Eletrônicos"
+  },
+  {
+    "id": "2",
+    "nome": "Suporte Veicular Magnético",
+    "imagem": "https://cf.shopee.com.br/file/2410e80b3a1220b8c81e0c3ebdb34685",
+    "preco": 29.9,
+    "link": "https://shopee.com.br/suporte-magnetico/p/SH123456",
+    "descricao": "Suporte para celular com fixação magnética, ideal para carros. Compatível com a maioria dos smartphones.",
+    "categoria": "Acessórios"
+  },
+  {
+    "id": "3",
+    "nome": "Luminária de Mesa LED Touch",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_812462-MLU72059461481_102023-F.webp",
+    "preco": 59.5,
+    "link": "https://www.mercadolivre.com.br/luminaria-led-touch/p/MLB234567",
+    "descricao": "Luminária de mesa com controle touch e ajuste de intensidade. Ideal para estudos e trabalho.",
+    "categoria": "Iluminação"
+  },
+  {
+    "id": "4",
+    "nome": "Relógio Masculino Digital Esportivo",
+    "imagem": "https://cf.shopee.com.br/file/26eaef1a90e0b6ccad7bb5f6b7094fa6",
+    "preco": 109.0,
+    "link": "https://shopee.com.br/relogio-digital/p/SH234567",
+    "descricao": "Relógio digital masculino com design esportivo. Resistente à água e com várias funções.",
+    "categoria": "Moda"
+  },
+  {
+    "id": "5",
+    "nome": "Carregador Rápido USB-C 20W",
+    "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_973687-MLB71283717462_082023-F.webp",
+    "preco": 39.0,
+    "link": "https://www.mercadolivre.com.br/carregador-usb-c/p/MLB345678",
+    "descricao": "Carregador rápido USB-C de 20W, compatível com diversos dispositivos. Carregamento eficiente e seguro.",
+    "categoria": "Carregadores"
+  }
+]
