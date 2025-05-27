@@ -26,14 +26,13 @@ export default function Header(props) {
 
   const { isMobile, isTablet, isDesktop } = useResponsive();
 
-  const options = [
-    { value: 'desktop', condition: isDesktop },
-    { value: 'tablet', condition: isTablet },
-    { value: 'mobile', condition: isMobile },
-  ];
-
-  const foundOption = options.find((option) => option.condition);
-  const result = foundOption ? foundOption.value : 'detectando'; // safe fallback
+  // Only allow 'desktop' or 'mobile' as valid values for SearchBar
+  let result: 'desktop' | 'mobile';
+  if (isDesktop) {
+    result = 'desktop';
+  } else {
+    result = 'mobile';
+  }
   return (
     <header
       className={

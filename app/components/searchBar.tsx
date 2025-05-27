@@ -78,7 +78,7 @@ export default function SearchBarResponsive(props: { port: 'desktop' | 'mobile' 
               placeholder="Buscar produtos..."
               className={`w-full px-4 ${
                 props.port === 'desktop' ? 'py-2' : 'py-1'
-              } border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500`}
+              } border bg-white border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500`}
             />
 
             {showResults && (
