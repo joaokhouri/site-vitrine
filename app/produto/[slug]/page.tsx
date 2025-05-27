@@ -4,7 +4,13 @@ import Link from 'next/link';
 import { supabase } from '../../lib/supabase';
 import NotFound from '../../not-found';
 
-export default async function ProdutoPage({ params }: { params: { slug: string } }) {
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function ProdutoPage({ params }: Props) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const { data: produto, error } = await supabase
@@ -25,12 +31,8 @@ export default async function ProdutoPage({ params }: { params: { slug: string }
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-6">
-      {/* Nome */}
       <h1 className="text-3xl font-bold mb-4">{produto.name}</h1>
-
-      {/* Container principal */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Imagem principal */}
         <div>
           <Image
             src={produto.img_url}
@@ -48,7 +50,6 @@ export default async function ProdutoPage({ params }: { params: { slug: string }
           <ul className="mt-4 list-disc list-inside text-sm text-gray-600">
             <li>Cor: {produto.color}</li>
           </ul>
-
           <Link
             href={produto.link}
             target="_blank"
@@ -58,12 +59,10 @@ export default async function ProdutoPage({ params }: { params: { slug: string }
           </Link>
         </div>
       </div>
-      {/* Avaliações */}
       <div className="mt-12">
         <h2 className="text-2xl font-semibold mb-2">Avaliações</h2>
         <p className="text-sm text-gray-500">⭐️⭐️⭐️⭐️☆ (4.5/5 com base em 123 avaliações)</p>
       </div>
-      {/* Produtos Relacionados */}
       {relacionados && relacionados.length > 0 && (
         <div className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">Produtos Relacionados</h2>
