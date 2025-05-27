@@ -5,7 +5,7 @@ import Logo from '../assets/logo.png';
 import Image from 'next/image';
 import FadeUp from './animations/fadeUp';
 import MobileMenu from './mobileMenu';
-import SearchBarC from './searchBar';
+import SearchBar from './SearchBar';
 import useResponsive from '../hooks/getResponsive';
 import CategoriesBar from './categoriesBar';
 
@@ -51,7 +51,7 @@ export default function Header(props) {
             </Link>
           </div>
 
-          <SearchBarC port={result} />
+          <SearchBar port={result} />
         </nav>
       ) : (
         <nav className="flex items-center justify-between px-6 py-3">
@@ -61,7 +61,7 @@ export default function Header(props) {
             </Link>
           </div>
           <div className="mobile-menu flex ml-auto gap-4 align-middle items-center">
-            <SearchBarC port={result} />
+            <SearchBar port={result} />
             <MobileMenu />
           </div>
         </nav>
