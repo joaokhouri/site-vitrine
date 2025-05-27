@@ -1,5 +1,6 @@
 'use client';
 import Header from './components/header';
+import Footer from './components/footer';
 import useResponsive from './hooks/getResponsive';
 import './globals.css';
 import 'swiper/css';
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} antialiased`}>
         <Header port={result} />
         <main className={result === 'desktop' ? 'pt-20' : null}>{children}</main>
+        <Footer port={result} />
       </body>
     </html>
   );

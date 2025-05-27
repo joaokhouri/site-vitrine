@@ -1,16 +1,11 @@
 import Image from 'next/image';
-
 import Link from 'next/link';
 import { supabase } from '../../lib/supabase';
 import NotFound from '../../not-found';
 
-interface Props {
-  params: {
-    slug: string;
-  };
-}
+type Params = Promise<{ slug: string[] }>;
 
-export default async function ProdutoPage({ params }: Props) {
+export default async function ProdutoPage({ params }: { params: Params }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const { data: produto, error } = await supabase
@@ -35,7 +30,7 @@ export default async function ProdutoPage({ params }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <Image
-            src={produto.img_url}
+            src={produto.image_url}
             alt={produto.name}
             width={600}
             height={600}
@@ -44,9 +39,7 @@ export default async function ProdutoPage({ params }: Props) {
         </div>
         <div className="flex flex-col gap-4">
           <p className="text-2xl font-semibold text-green-600">R$ {produto.price.toFixed(2)}</p>
-
           <p className="text-gray-700">{produto.description}</p>
-
           <ul className="mt-4 list-disc list-inside text-sm text-gray-600">
             <li>Cor: {produto.color}</li>
           </ul>
@@ -63,30 +56,6 @@ export default async function ProdutoPage({ params }: Props) {
         <h2 className="text-2xl font-semibold mb-2">Avaliações</h2>
         <p className="text-sm text-gray-500">⭐️⭐️⭐️⭐️☆ (4.5/5 com base em 123 avaliações)</p>
       </div>
-      {relacionados && relacionados.length > 0 && (
-        <div className="mt-16">
-          <h2 className="text-2xl font-semibold mb-4">Produtos Relacionados</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {relacionados.map((r) => (
-              <Link
-                key={r.id}
-                href={`/produto/${r.slug}`}
-                className="bg-white rounded-xl shadow p-4 hover:shadow-md transition block"
-              >
-                <Image
-                  src={r.img_url}
-                  alt={r.name}
-                  width={300}
-                  height={300}
-                  className="rounded-lg"
-                />
-                <h3 className="text-sm font-semibold mt-2">{r.name}</h3>
-                <p className="text-green-600 text-sm">R$ {r.price.toFixed(2)}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
