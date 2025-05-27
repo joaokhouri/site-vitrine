@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
     "hamburger-react": "^2.5.2",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.510.0",
